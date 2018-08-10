@@ -6,14 +6,27 @@
   </head>
   <body>
     <div class="container">
-      <div id="results">
-
+      <div class="jumbotron">
+          <h1>Find a PDX Doctor</h1>
       </div>
-    <form class="" id="searchTerm" action="index.html" method="get">
+
+    <form id="searchByKeyword">
+      <h5>Search by medical issue</h5>
+      <input type="text" id="keyword">
+      <button type="submit" id="keywordSubmit">Search</button>
+    </form>
+
+
+    <!-- <form class="" id="searchTerm" action="index.html" method="get">
       <label for="work">Enter medical issue: </label>
       <input type="text" name="issue" value="">
       <button type="submit" name="button">Find Doctor</button>
-    </form>
+    </form> -->
+
+
+    <div id="keywordSearchResponse">
+
+    </div>
     <div class="showErrors">
 
     </div>
