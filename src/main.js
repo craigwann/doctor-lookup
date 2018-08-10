@@ -2,9 +2,9 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
-import { apiCallKeyword } from './doctor';
+import { DrService } from './doctor';
 
-function addKeywordToPage(keywordInfo){
+function addKeywordHTML(keywordInfo){
   if (keywordInfo.meta.count === 0) {
     $('#keywordSearchResponse').append(`<p>Sorry, no doctors met your search criteria. Please <a href="index.html">try your search again</a>.</p>`);
   } else {
@@ -20,9 +20,7 @@ function addKeywordToPage(keywordInfo){
         </div>
       </div>`);
       $('#keywordSearchResponse').show();
-      setTimeout(function() {
-        $(".newsearch").show();
-      }, 4000);
+      $(".newsearch").show();
     }
   }
 }
@@ -35,8 +33,17 @@ $(document).ready(function(){
 
   $("#searchByKeyword").submit(function(event) {
     event.preventDefault();
+
     let inputKeyword = $("#keyword").val();
-    apiCallKeyword(inputKeyword, addKeywordToPage);
+    let drService = new DrService;
+    let promise = drService.getDrByKeyword(inputKeyword, addKeywordHTML);
+
+    promise.then(function(response) {
+      let keywordInfo = JSON.parse(response);
+      addKeywordHTML(keywordInfo);
+    });
+
+
     $(".queryForms").hide();
 
   });

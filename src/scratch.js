@@ -7,6 +7,13 @@ https://api.betterdoctor.com/2016-03-01/doctors?query=${inputKeyword}&location=4
 
 let url = `https://www.rijksmuseum.nl/api/en/collection?q=${input}&key=${process.env.API_KEY}&format=json&imgonly=true`;
 
+setTimeout(function() {
+  $(".newsearch").show();
+}, 4000);
+
+event.preventDefault();
+
+
 export class doctorApi{
   getDrByInput(input){
     return new Promise(function(resolve, reject){
