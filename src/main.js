@@ -6,7 +6,8 @@ import { DrService } from './doctor';
 
 function addKeywordHTML(keywordInfo){
   if (keywordInfo.meta.count === 0) {
-    $('#keywordSearchResponse').append(`<p>Sorry, no doctors met your search criteria. Please <a href="index.html">try your search again</a>.</p>`);
+    $('#keywordSearchError').show();
+    $('#keywordSearchError').append(`<p>Sorry, no doctors met your search criteria. Please <a href="index.html">try your search again</a>.</p>`);
   } else {
     for (var i = 0; i < keywordInfo.data.length; i++) {
       $('#keywordSearchResponse').append(`<div class="card">
@@ -28,7 +29,7 @@ function addKeywordHTML(keywordInfo){
 
 
 $(document).ready(function(){
-
+  $('#keywordSearchError').hide();
   $(".newsearch").hide();
 
   $("#searchByKeyword").submit(function(event) {
