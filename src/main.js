@@ -12,15 +12,16 @@ function addKeywordToPage(keywordInfo){
       $('#keywordSearchResponse').append(`<div class="card">
         <div class="card-body">
           <h5 class="card-title">${keywordInfo.data[i].profile.first_name}  ${keywordInfo.data[i].profile.last_name}</h5>
-          <p class="card-text">Accepts new patients: ${keywordInfo.data[i].practices[0].accepts_new_patients}<br>Address: ${keywordInfo.data[i].practices[0].visit_address.street}<br>${keywordInfo.data[i].practices[0].visit_address.city} ${keywordInfo.data[i].practices[0].visit_address.state} ${keywordInfo.data[i].practices[0].visit_address.zip}<br>
-          Phone: ${keywordInfo.data[i].practices[0].phones[0].number}</p></p>
-          <img src="${keywordInfo.data[i].profile.image_url}">
+          <p class="card-text">Accepts new patients: ${keywordInfo.data[i].practices[0].accepts_new_patients}<br>
+            Address: ${keywordInfo.data[i].practices[0].visit_address.street}<br>${keywordInfo.data[i].practices[0].visit_address.city} ${keywordInfo.data[i].practices[0].visit_address.state} ${keywordInfo.data[i].practices[0].visit_address.zip}<br>
+          Phone: ${keywordInfo.data[i].practices[0].phones[0].number}<br>
+          <a href="${keywordInfo.data[i].practices[0].website}">Website</a> <br>
+          <img src="${keywordInfo.data[i].profile.image_url}"></p>
         </div>
       </div>`);
-      console.log();
       $('#keywordSearchResponse').show();
       setTimeout(function() {
-        $(".search-again").show();
+        $(".newsearch").show();
       }, 4000);
     }
   }
@@ -29,11 +30,14 @@ function addKeywordToPage(keywordInfo){
 
 
 $(document).ready(function(){
+
+  $(".newsearch").hide();
+
   $("#searchByKeyword").submit(function(event) {
     event.preventDefault();
     let inputKeyword = $("#keyword").val();
     apiCallKeyword(inputKeyword, addKeywordToPage);
-    $(".searchboxes").hide();
+    $(".queryForms").hide();
 
   });
 });
