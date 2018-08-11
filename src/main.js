@@ -10,7 +10,7 @@ function addKeywordHTML(keywordInfo){
     $('#keywordSearchError').append(`<p>Sorry, no doctors met your search criteria. Please <a href="index.html">try your search again</a>.</p>`);
   } else {
     for (var i = 0; i < keywordInfo.data.length; i++) {
-      $('#keywordSearchResponse').append(`<div class="card">
+      $('#keywordSearchResponse').append(`<div class="card" style="width: 300px; height: 360px;">
         <div class="card-body">
           <h5 class="card-title">${keywordInfo.data[i].profile.first_name}  ${keywordInfo.data[i].profile.last_name}</h5>
           <p class="card-text">Accepts new patients: ${keywordInfo.data[i].practices[0].accepts_new_patients}<br>

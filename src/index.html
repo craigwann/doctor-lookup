@@ -11,40 +11,46 @@
           <h1>Find a PDX Doctor</h1>
       </div>
 
-      <div class="card">
-        <div class="card-body">
-          <div id="keywordSearchError">
+      <div class="row">
 
+        <div class="card" style="width: 300px;">
+          <div class="card-body">
+            <div id="keywordSearchError">
+
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="newsearch">
+              <p>Not finding what you need?
+              <button class="btn btn-warning"><a href="index.html">New Search</a></button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <div class="queryForms">
+              <form id="searchByKeyword">
+                <h5>Find doctor by medical issue</h5>
+                <input type="text" id="keyword">
+                <button type="submit" id="keywordSubmit">Search</button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-body">
-          <div class="newsearch">
-            <p>Not finding what you need?
-            <button class="btn btn-warning"><a href="index.html">New Search</a></button></p>
-          </div>
-        </div>
+
+      <div class="" id="keywordSearchResponse">
+
       </div>
 
 
 
 
-    <div class="queryForms">
-      <form id="searchByKeyword">
-        <h5>Find doctor by medical issue</h5>
-        <input type="text" id="keyword">
-        <button type="submit" id="keywordSubmit">Search</button>
-      </form>
-    </div>
 
-
-
-    <!-- <form class="" id="searchTerm" action="index.html" method="get">
-      <label for="work">Enter medical issue: </label>
-      <input type="text" name="issue" value="">
-      <button type="submit" name="button">Find Doctor</button>
-    </form> -->
 
 
     <div class="showErrors">
