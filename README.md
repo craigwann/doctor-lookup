@@ -16,7 +16,7 @@ A website where a user may enter a medical issue or Doctor's name to find a doct
 * `npm install` to install dependencies
 * `npm run start` to build and start the dev server
 * `npm run lint` to explicitly run ESLint
-* `npm run test` to run the unit tests with Karma and Jasmine. Visit `localhost:9876` to view the tests.
+* `npm run start` Visit `localhost:8080` to view the tests.
 
 ## Specs
 1. A user should be able to enter a medical issue to receive a list of doctors in the Portland area that fit the search query.
